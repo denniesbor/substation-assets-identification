@@ -1,0 +1,7 @@
+*.pt
+*.csv
+logs/
+__pycache__/
+*.pyc
+*.ipynb_checkpoints/
+*.geojson

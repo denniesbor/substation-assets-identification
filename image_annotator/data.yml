@@ -1,0 +1,22 @@
+path: /home/dk/env-vars/google-earth-leaflet/image_annotator/dataset
+train: images/train
+val: images/val
+
+nc: 3
+names: ["Circuit Breaker", "Transformer", "Reactors"]
+
+# Augmentation parameters
+hsv_h: 0.015 # Hue augmentation
+hsv_s: 0.7 # Saturation augmentation
+hsv_v: 0.4 # Value (brightness) augmentation
+
+# Additional augmentations
+degrees: 45 # Image rotation (+/- deg)
+translate: 0.1 # Image translation (+/- fraction)
+scale: 0.5 # Image scale (+/- gain)
+shear: 0.0 # Image shear (+/- deg)
+perspective: 0.0 # Image perspective (+/- fraction), range 0-0.001
+flipud: 0.5 # Image flip up-down (probability)
+fliplr: 0.5 # Image flip left-right (probability)
+mosaic: 1.0 # Image mosaic (probability)
+mixup: 0.0 # Image mixup (probability)
