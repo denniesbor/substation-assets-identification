@@ -1,15 +1,11 @@
 import sys
 import os
-import subprocess
-from PyQt5.QtWebEngineWidgets import QWebEngineView
-from PyQt5.QtCore import QUrl, QPoint, Qt, QRect, QTemporaryFile
 import json
-from PyQt5.QtGui import QPixmap, QPainter
 import subprocess
-from PyQt5.QtGui import QPainter, QPen, QColor, QPixmap
 import geopandas as gpd
-from dotenv import load_dotenv
 
+from PyQt5.QtCore import QUrl, QPoint, Qt, QRect, QTemporaryFile
+from PyQt5.QtGui import QPixmap, QPainter, QPen, QColor
 from PyQt5.QtWidgets import (
     QApplication,
     QMainWindow,
@@ -21,11 +17,21 @@ from PyQt5.QtWidgets import (
     QDialog,
     QDialogButtonBox,
     QLineEdit,
-)
-from PyQt5.QtWidgets import (
     QComboBox,
     QCheckBox,
 )
+
+# import PyQtWebEngine
+
+# For web content, we'll use QtWebEngineWidgets if available
+try:
+    from PyQt5.QtWebEngineWidgets import QWebEngineView
+except ImportError as e:
+    print("QtWebEngineWidgets not available. Web content features will be disabled.", e)
+    QWebEngineView = None
+
+# For loading the Google Maps API
+from dotenv import load_dotenv
 
 load_dotenv()
 
